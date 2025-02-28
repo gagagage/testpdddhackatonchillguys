@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ПДД PRO для детей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Тест ПДД PRO для детей</h1>
+        <button id="start-btn" class="start-animation">Начать тест</button>
+
+        <div id="quiz-content" class="content-animation" style="display: none;">
+            <div id="score-board">
+                <span id="level-info">Уровень 1</span>
+                <span id="score">Очки: 0</span>
+                <span id="lives">Жизни: ❤️❤️❤️</span>
+                <span id="skips">Пропуски: ⭐️⭐️</span>
+                <span id="timer">Время: 30 сек.</span>
+            </div>
+            <div id="question"></div>
+            <img id="question-image" src="" alt="Вопрос" style="max-width: 100%; height: auto; margin: 10px 0;">
+            <div id="options"></div>
+            <button id="submit-btn" disabled class="quiz-button">Ответить</button>
+            <button id="skip-btn" class="quiz-button">Пропустить</button>
+            <button id="hint-btn" disabled class="quiz-button">Подсказка (300)</button>
+        </div>
+
+        <div id="rating" class="result-animation" style="display: none;">
+            <h2>Результаты:</h2>
+            <p id="rating-text"></p>
+            <button id="restart-btn" class="quiz-button">Пройти снова</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
