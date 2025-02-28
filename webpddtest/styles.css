@@ -1,0 +1,258 @@
+/* Общие настройки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b1b1ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quiz-container {
+    background: #e6eaff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Анимация появления контейнера */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопка "Начать тест" */
+#start-btn {
+    padding: 20px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#start-btn:hover {
+    transform: scale(1.1) translateY(0);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#start-btn:active {
+    transform: scale(0.98) translateY(0);
+}
+
+/* Окно с вопросами */
+#quiz-content {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#quiz-content.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Результаты */
+#rating {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#rating.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Заголовок */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Информационная панель */
+#score-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#level-info {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Вопрос */
+#question {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Изображение */
+#question-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#question-image:hover {
+    transform: scale(1.05);
+}
+
+/* Варианты ответов */
+#options button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#options button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#options button.selected {
+    background-color: #28a745;
+    transform: scale(1.1);
+}
+
+.hint-highlight {
+    background-color: #28a745 !important;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/* Общие настройки для всех кнопок */
+.quiz-button {
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Кнопка "Ответить" */
+#submit-btn {
+    background: linear-gradient(90deg, #28a745, #1c7430);
+    color: white;
+}
+
+#submit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Кнопка "Пропустить" */
+#skip-btn {
+    background: linear-gradient(90deg, #dc3545, #a71d2a);
+    color: white;
+}
+
+#skip-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#skip-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Кнопка "Подсказка" */
+#hint-btn {
+    background: linear-gradient(90deg, #ffc107, #e0a800);
+    color: black;
+}
+
+#hint-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#hint-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Кнопка "Пройти снова" */
+#restart-btn {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+}
+
+#restart-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Таймер */
+#timer {
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #question {
+        font-size: 20px;
+    }
+
+    .quiz-button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
